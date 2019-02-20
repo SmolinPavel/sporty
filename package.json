@@ -1,0 +1,50 @@
+{
+  "name": "SportyBrosky",
+  "version": "1.0.0",
+  "description": "Sports app",
+  "main": "src/server.js",
+  "scripts": {
+    "build": "babel src -d dist",
+    "start": "npm build && node dist/server.js",
+    "server": "nodemon --exec babel-node src/server.js",
+    "test": "MONGO_URL=mongodb://localhost:27017/sporty-test SECRET=test port=1234 mocha",
+    "prettier": "prettier --write ./src/*.{js,jsx}",
+    "lint": "eslint '**/*.{js,jsx}' --quiet"
+  },
+  "author": "Pavel Smolin",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.4.0",
+    "mongoose": "^5.4.6",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.11.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.2.2",
+    "@babel/node": "^7.2.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.3.1",
+    "@babel/register": "^7.0.0",
+    "dotenv": "^6.2.0",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-standard": "^4.0.0",
+    "expect": "^24.1.0",
+    "faker": "^4.1.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "supertest": "^3.4.2"
+  }
+}

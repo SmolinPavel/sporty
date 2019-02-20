@@ -1,0 +1,5 @@
+--require @babel/register
+--require @babel/polyfill
+--recursive
+--timeout 20000
+
