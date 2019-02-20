@@ -5,7 +5,7 @@
   "main": "src/server.js",
   "scripts": {
     "build": "babel src -d dist",
-    "start": "npm build && node dist/server.js",
+    "start": "npm run-script build && node dist/server.js",
     "server": "nodemon --exec babel-node src/server.js",
     "test": "MONGO_URL=mongodb://localhost:27017/sporty-test SECRET=test port=1234 mocha",
     "prettier": "prettier --write ./src/*.{js,jsx}"
