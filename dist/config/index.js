@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SECRET = exports.port = exports.MONGO_URL = void 0;
 
-require("dotenv/config");
+require("dotenv").load();;
 
 var ENV = process.env;
 var MONGO_URL = ENV.MONGO_URL,
