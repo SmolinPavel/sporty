@@ -2,4 +2,4 @@ import 'dotenv/config';
 
 const ENV = process.env;
 
-export const { MONGO_URL, port, SECRET } = ENV;
+export const { MONGO_URL, SECRET } = ENV;
