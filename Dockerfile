@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # Bind ports
-EXPOSE 8080
+EXPOSE 5000
 
 # Define the command to run your app
 CMD [ "yarn", "start" ]
