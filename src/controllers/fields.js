@@ -56,8 +56,27 @@ const create = (req, res) => {
   });
 };
 
+const deleteById = (req, res) => {
+  const { id: userId } = req.user;
+  const { id } = req.params;
+
+  Field.findById(id)
+    .then(field => {
+      // Check for field owner
+      if (field.user.toString() !== userId) {
+        return res.status(401).json({ notauthorized: 'User not authorized' });
+      }
+
+      // Delete
+      return field.remove();
+    })
+    .then(() => res.json({ success: true }))
+    .catch(err => res.status(404).json({ postnotfound: 'No field found' }));
+};
+
 export default {
   create,
+  deleteById,
   getAll,
   getById,
 };
